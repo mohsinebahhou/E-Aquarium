@@ -1,5 +1,5 @@
 <div>
-    <form [formGroup]="personForm" (ngSubmit)="onFormSubmit()">
+    <form [formGroup]="animalForm" (ngSubmit)="onFormSubmit()">
     <mat-form-field appearance="fill">
       <mat-label>Nom</mat-label>
       <input matInput  formControlName="nom">
@@ -9,8 +9,8 @@
     <mat-form-field appearance="fill">
       <mat-label>Sexe</mat-label>
       <mat-select name="sex" formControlName="sex">
-        <mat-option value="Masculin">Masculin</mat-option>
-        <mat-option value="Feminin">Feminin</mat-option>
+        <mat-option value="Male">Male</mat-option>
+        <mat-option value="Femelle">Femelle</mat-option>
         <mat-option value="Hermaphrodite">Hermaphrodite</mat-option>
       </mat-select>
     </mat-form-field>
@@ -60,7 +60,7 @@
       </mat-form-field>
     <br>
     <div>   
-        <button mat-raised-button>Submit</button>
+        <button mat-raised-button>Ajouter</button>
       </div>
 
 </form>

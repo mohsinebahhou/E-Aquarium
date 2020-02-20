@@ -1,0 +1,43 @@
+<div>
+    <form [formGroup]="bassinForm" (ngSubmit)="onFormSubmit()">
+    <mat-form-field appearance="fill">
+      <mat-label>Nom</mat-label>
+      <input matInput  formControlName="nom">
+    </mat-form-field>
+    <br>
+
+
+    <mat-form-field appearance="fill">
+        <mat-label>Capacite</mat-label>
+        <input matInput type="number" name="capacite" formControlName="capacite">
+    </mat-form-field>
+    <br>
+
+
+    <mat-form-field appearance="fill">
+        <mat-label>Volume</mat-label>
+        <input matInput type="number" name="volume" formControlName="volume">
+    </mat-form-field>
+    <br>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Etat</mat-label>
+        <input matInput  formControlName="etat">
+      </mat-form-field>
+      <br>
+
+
+    <div>   
+        <button mat-raised-button>Ajouter</button>
+      </div>
+
+</form>
+</div>
+
+
+
+<ul>
+	<li *ngFor="let item of listBassin">
+		{{ item.id }} :  {{ item.nom }}
+	</li>
+</ul>

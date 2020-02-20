@@ -48,6 +48,8 @@ import {MatTreeModule} from '@angular/material/tree';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { FormAddAnimalComponent } from './animal/form-add-animal/form-add-animal.component';
+import { FormAddBassinComponent } from './bassin/form-add-bassin/form-add-bassin.component';
+import { FormAddEspeceComponent } from './espece/form-add-espece/form-add-espece.component';
 
 
 
@@ -56,7 +58,9 @@ import { FormAddAnimalComponent } from './animal/form-add-animal/form-add-animal
 @NgModule({
   declarations: [
     AppComponent,
-    FormAddAnimalComponent
+    FormAddAnimalComponent,
+    FormAddBassinComponent,
+    FormAddEspeceComponent
   ],
   imports: [
     BrowserModule,

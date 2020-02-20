@@ -29,7 +29,7 @@ export class FormAddAnimalComponent implements OnInit {
   ngOnInit() {
   }
 
-  personForm = this.formBuilder.group({
+  animalForm = this.formBuilder.group({
     nom: '',
     sex: '',
     signeDistinctif:'',
@@ -40,8 +40,7 @@ export class FormAddAnimalComponent implements OnInit {
   });
 
   onFormSubmit() {
-    this.serviceAddAnimalService.saveAnimal(this.personForm.value);
-    //this.serviceAddAnimalService.saveAnimal(a);
+    this.serviceAddAnimalService.saveAnimal(this.animalForm.value);
   }
 
 }
