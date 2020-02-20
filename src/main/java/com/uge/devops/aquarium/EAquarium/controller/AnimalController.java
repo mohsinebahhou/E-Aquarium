@@ -31,7 +31,11 @@ public class AnimalController {
     }
 
     @PostMapping(path = "/animal")
-    public void addAnimal(@RequestBody Animal a) {
+    public void addAnimal(@RequestBody Animal a)
+    {
+        System.out.println("addAnimal");
+        System.out.println(a);
+        System.out.println("addAnimal");
         animalService.addAnimal(a);
     }
 

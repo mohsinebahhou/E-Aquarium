@@ -17,7 +17,7 @@ public class Animal {
     private String signeDistinctif;
     private String dateArrivee;
     private String dateDepart;
-    private int IdEspece;
+    private int idEspece;
     private int idBassin;
 
     public Animal() {
@@ -30,11 +30,9 @@ public class Animal {
         this.signeDistinctif = signeDistinctif;
         this.dateArrivee = dateArrivee;
         this.dateDepart = dateDepart;
-        IdEspece = idEspece;
-        idBassin = idBassin;
+        this.idEspece = idEspece;
+        this.idBassin = idBassin;
     }
-
-
 
     public int getId() {
         return id;
@@ -81,12 +79,16 @@ public class Animal {
         this.dateDepart = dateDepart;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public int getIdEspece() {
-        return IdEspece;
+        return idEspece;
     }
 
     public void setIdEspece(int idEspece) {
-        IdEspece = idEspece;
+        this.idEspece = idEspece;
     }
 
     public int getIdBassin() {
@@ -94,7 +96,7 @@ public class Animal {
     }
 
     public void setIdBassin(int idBassin) {
-        idBassin = idBassin;
+        this.idBassin = idBassin;
     }
 
     @Override
@@ -106,8 +108,10 @@ public class Animal {
                 ", signeDistinctif='" + signeDistinctif + '\'' +
                 ", dateArrivee='" + dateArrivee + '\'' +
                 ", dateDepart='" + dateDepart + '\'' +
-                ", IdEspece=" + IdEspece +
+                ", IdEspece=" + idEspece +
                 ", IdBassin=" + idBassin +
                 '}';
     }
+
+
 }

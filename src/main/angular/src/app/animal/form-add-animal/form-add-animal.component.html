@@ -1,0 +1,75 @@
+<div>
+    <form [formGroup]="personForm" (ngSubmit)="onFormSubmit()">
+    <mat-form-field appearance="fill">
+      <mat-label>Nom</mat-label>
+      <input matInput  formControlName="nom">
+    </mat-form-field>
+    <br>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Sexe</mat-label>
+      <mat-select name="sex" formControlName="sex">
+        <mat-option value="Masculin">Masculin</mat-option>
+        <mat-option value="Feminin">Feminin</mat-option>
+        <mat-option value="Hermaphrodite">Hermaphrodite</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <br>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Signe distinctif</mat-label>
+        <input matInput name="signeDistinctif" formControlName="signeDistinctif">
+    </mat-form-field>
+    <br>
+
+    <mat-form-field appearance="fill" style="width: 204px;">
+        <mat-label>Date Arrivee</mat-label>
+        <input matInput [matDatepicker]="dateArrivee" name="dateArrivee" formControlName="dateArrivee">
+        <mat-datepicker-toggle matSuffix [for]="dateArrivee"></mat-datepicker-toggle>
+        <mat-datepicker #dateArrivee></mat-datepicker>
+    </mat-form-field>
+    <br>
+      
+    <mat-form-field appearance="fill" style="width: 204px;">
+        <mat-label>Date Depart</mat-label>
+        <input matInput [matDatepicker]="dateDepart" name="dateDepart" formControlName="dateDepart">
+        <mat-datepicker-toggle matSuffix [for]="dateDepart"></mat-datepicker-toggle>
+        <mat-datepicker #dateDepart></mat-datepicker>
+    </mat-form-field>
+    <br>
+
+
+    <mat-form-field appearance="fill" >
+        <mat-label>Espece</mat-label>
+        <mat-select name="idEspece" formControlName="idEspece">
+          <mat-option value="1">Espece1</mat-option>
+          <mat-option value="2">Espece2</mat-option>
+          <mat-option value="3">Espece3</mat-option>
+        </mat-select>
+      </mat-form-field>
+    <br>
+
+
+    <mat-form-field appearance="fill" >
+        <mat-label>Bassin</mat-label>
+        <mat-select name="idBassin" formControlName="idBassin">
+          <mat-option value="1">Bassin1</mat-option>
+          <mat-option value="2">Bassin2</mat-option>
+          <mat-option value="3">Bassin3</mat-option>
+        </mat-select>
+      </mat-form-field>
+    <br>
+    <div>   
+        <button mat-raised-button>Submit</button>
+      </div>
+
+</form>
+</div>
+
+
+
+<ul>
+	<li *ngFor="let item of listAnimal">
+		{{ item.id }} :  {{ item.nom }}
+	</li>
+</ul>
