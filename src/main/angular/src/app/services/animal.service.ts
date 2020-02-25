@@ -1,10 +1,7 @@
 import { Injectable, NgModule } from '@angular/core';
-import { Animal } from 'src/app/interfaces/animal';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { HttpClientModule,HttpHeaders } from '@angular/common/http';
+import { Animal } from '../interfaces/animal';
+import { HttpHeaders, HttpClientModule, HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { error } from 'util';
-
 
 export interface AnimalResponse {
 	results?: Animal[]; 
@@ -21,15 +18,8 @@ const httpOptions = {
 })
 
 
-@NgModule({
-  imports: [
-      HttpClientModule
-  ]
-})
 
-
-export class AnimalServiceService {
-
+export class AnimalService {
 
   constructor(private http: HttpClient) { }
 
@@ -49,9 +39,13 @@ export class AnimalServiceService {
           }
         }
     );
+
+    
  }
 
  getAll(): Observable<any> {
   return this.http.get("/animal")
 }
+
+
 }

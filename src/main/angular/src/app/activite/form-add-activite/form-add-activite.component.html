@@ -1,0 +1,74 @@
+<div>
+    <form [formGroup]="activiteForm" (ngSubmit)="onFormSubmit()">
+    <mat-form-field appearance="fill">
+      <mat-label>Nom</mat-label>
+      <input matInput  formControlName="nom" required>
+    </mat-form-field>
+    <br>
+
+    <mat-form-field appearance="fill" style="width: 204px;">
+        <mat-label>Jour</mat-label>
+        <input matInput [matDatepicker]="jour" name="jour" formControlName="jour" required>
+        <mat-datepicker-toggle matSuffix [for]="jour"></mat-datepicker-toggle>
+        <mat-datepicker #jour></mat-datepicker>
+    </mat-form-field>
+    <br>
+
+  
+
+
+    <mat-form-field appearance="fill">
+        <mat-label>Heure debut</mat-label>
+        <input matInput [ngxTimepicker]="heureDebut" [format]="24"  formControlName="heureDebut" required />
+      </mat-form-field>
+      <ngx-material-timepicker #heureDebut></ngx-material-timepicker>
+      <br>
+
+
+
+    <mat-form-field appearance="fill">
+        <mat-label>Heure fin</mat-label>
+        <input matInput [ngxTimepicker]="heureFin" [format]="24"  formControlName="heureFin" required />
+      </mat-form-field>
+      <ngx-material-timepicker #heureFin></ngx-material-timepicker>
+      <br>
+
+
+
+      <mat-radio-group aria-label="Select an option" formControlName="activitePublic" >
+        <mat-radio-button value="true">Public </mat-radio-button>
+       
+        <mat-radio-button value="false">Privee</mat-radio-button>
+      </mat-radio-group>
+      <br>    <br>
+
+
+
+    <mat-form-field appearance="fill" >
+        <mat-label>Secteur</mat-label>
+        <mat-select name="idSecteur" formControlName="idSecteur" required>
+          <mat-option value="1">Secteur1</mat-option>
+          <mat-option value="2">Secteur2</mat-option>
+          <mat-option value="3">Secteur3</mat-option>
+        </mat-select>
+      </mat-form-field>
+    <br>
+
+    <mat-form-field appearance="fill" >
+        <mat-label>Bassin</mat-label>
+        <mat-select name="idBassin" formControlName="idBassin" required>
+          <mat-option value="1">Bassin1</mat-option>
+          <mat-option value="2">Bassin2</mat-option>
+          <mat-option value="3">Bassin3</mat-option>
+        </mat-select>
+      </mat-form-field>
+    <br>
+
+    <div>   
+        <button mat-raised-button>Ajouter</button>
+      </div>
+
+</form>
+</div>
+
+

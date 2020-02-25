@@ -1,6 +1,8 @@
 package com.uge.devops.aquarium.EAquarium.models;
 
 import javax.persistence.*;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -53,6 +55,15 @@ public class Activite {
 
     public void setJour(String jour) {
         this.jour = jour;
+        try {
+            SimpleDateFormat formatter1=new SimpleDateFormat("yyyy-MM-dd");
+            Date date1=formatter1.parse(jour);
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            this.jour = sdf.format(date1);
+
+        } catch (Exception e) {
+            System.out.println("Erreur " + e.getMessage());
+        }
     }
 
     public String getHeureDebut() {

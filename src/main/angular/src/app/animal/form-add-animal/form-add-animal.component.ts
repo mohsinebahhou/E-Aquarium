@@ -1,9 +1,8 @@
 import { Component, OnInit, Input, NgZone } from '@angular/core';
-import { Animal } from 'src/app/interfaces/animal';
-import { FormControl, FormBuilder } from '@angular/forms';
-import { AnimalServiceService, AnimalResponse } from 'src/app/services/animal-service.service';
+import { FormBuilder } from '@angular/forms';
+import { AnimalService, AnimalResponse } from 'src/app/services/animal.service';
 import { Observable } from 'rxjs';
-
+import { Animal } from 'src/app/interfaces/animal';
 
 
 
@@ -14,19 +13,58 @@ import { Observable } from 'rxjs';
 })
 export class FormAddAnimalComponent implements OnInit {
 
- 
+  listAnimal : Observable<Animal>;
+
   constructor(private ngZone: NgZone,
     private formBuilder: FormBuilder,
-    private serviceAddAnimalService: AnimalServiceService) {
-      this.serviceAddAnimalService.getAll().subscribe(
+    private serviceAnimal : AnimalService) {
+      this.serviceAnimal.getAll().subscribe(
         data => this.listAnimal = data,
-        error => console.log(error))
-
+        error => console.log("Erreur "+error)   
+        )
      }
 
-    listAnimal : Observable<AnimalResponse>;
+
+
+    Show(){
+      console.log("@@@@@@@@@@@@@@@@@@@@@@@@@")
+      console.log("show"+this.listAnimal)
+      this.listAnimal.forEach(element => {
+        console.log(element)
+      });
+    } 
+
+
+  
 
   ngOnInit() {
+/*
+    console.log("---------ngOnInit-------------")
+    this.serviceAnimal.getAll().subscribe(
+      data => this.listAnimal = data,
+      error => console.log("Erreur "+error)   
+      )
+    console.log("#############################################")
+    //console.log("ngOninit"+this.listAnimal)
+    this.Show();
+    console.log("---------ngOnInit-------------")
+*/
+    
+  }
+
+  ngAfterViewInit(){
+    /*
+    console.log("---------ngAfterViewInit-------------")
+    this.serviceAnimal.getAll().subscribe(
+      data => this.listAnimal = data,
+      error => console.log("Erreur "+error)   
+      )
+    console.log("#############################################")
+    console.log("ngAfterViewInit"+this.listAnimal)
+    this.Show();
+    console.log("---------ngAfterViewInit-------------")
+
+    */
   }
 
   animalForm = this.formBuilder.group({
@@ -40,7 +78,6 @@ export class FormAddAnimalComponent implements OnInit {
   });
 
   onFormSubmit() {
-    this.serviceAddAnimalService.saveAnimal(this.animalForm.value);
+    this.serviceAnimal.saveAnimal(this.animalForm.value);
   }
-
 }

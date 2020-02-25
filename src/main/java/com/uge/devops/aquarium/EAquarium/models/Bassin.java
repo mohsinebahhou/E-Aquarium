@@ -1,6 +1,7 @@
 package com.uge.devops.aquarium.EAquarium.models;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -25,6 +26,15 @@ public class Bassin {
         this.animaux = animaux;
     }
 
+    public Bassin(int id, String nom, int capacite, double volume, String etat) {
+        this.id = id;
+        this.nom = nom;
+        this.capacite = capacite;
+        this.volume = volume;
+        this.etat = etat;
+        this.animaux = animaux;
+        this.animaux= new ArrayList<>();
+    }
 
     public Bassin() {
     }

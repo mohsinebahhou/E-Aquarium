@@ -1,13 +1,10 @@
-import { Injectable, NgModule } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { HttpClientModule,HttpHeaders } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { HttpHeaders, HttpClientModule, HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Activite } from '../interfaces/activite';
 import { Observable } from 'rxjs';
-import { Bassin } from '../interfaces/bassin';
-import { Espece } from '../interfaces/espece';
 
-
-export interface EspeceResponse {
-	results?: Espece[]; 
+export interface ActiviteResponse {
+	results?: Activite[]; 
 }
 
 const httpOptions = {
@@ -21,14 +18,14 @@ const httpOptions = {
 })
 
 
-export class EspeceServiceService {
+export class ActiviteService {
 
   constructor(private http: HttpClient) { }
 
-  saveEspece(espece: any)  {
-    console.log(espece);
-    this.http.post("/Espece",espece,httpOptions).subscribe(res => {     
-      console.log(espece);
+  saveActivite(activite: any)  {
+    console.log(activite);
+    this.http.post("/Activite",activite,httpOptions).subscribe(res => {     
+      console.log(activite);
     },
     (err: HttpErrorResponse) => {
           if (err.error instanceof Error) {
@@ -41,9 +38,11 @@ export class EspeceServiceService {
           }
         }
     );
+
+    
  }
 
  getAll(): Observable<any> {
-  return this.http.get("/Espece")
+  return this.http.get("/Activite")
 }
 }

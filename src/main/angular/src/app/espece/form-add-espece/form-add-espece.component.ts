@@ -1,7 +1,4 @@
-import { Component, OnInit, Input, NgZone } from '@angular/core';
-import { FormControl, FormBuilder } from '@angular/forms';
-import { Observable } from 'rxjs';
-import { EspeceServiceService, EspeceResponse } from 'src/app/services/espece-service.service';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-form-add-espece',
@@ -10,29 +7,9 @@ import { EspeceServiceService, EspeceResponse } from 'src/app/services/espece-se
 })
 export class FormAddEspeceComponent implements OnInit {
 
-  constructor(private ngZone: NgZone,
-    private formBuilder: FormBuilder,
-    private serviceEspece: EspeceServiceService) {
-      this.serviceEspece.getAll().subscribe(
-        data => this.listEspece = data,
-        error => console.log(error))
-     }
+  constructor() { }
 
-    listEspece : Observable<EspeceResponse>;
-
-  ngOnInit() {
-  }
-
-  especeForm = this.formBuilder.group({
-    nom: '',
-    esperanceVie: '',
-    regimeAlimentaire:'',
-    niveauMenace: ''
-  });
-
-
-  onFormSubmit() {
-    this.serviceEspece.saveEspece(this.especeForm.value);
+  ngOnInit(): void {
   }
 
 }

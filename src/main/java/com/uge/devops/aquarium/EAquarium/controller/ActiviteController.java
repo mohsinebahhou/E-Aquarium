@@ -2,12 +2,16 @@ package com.uge.devops.aquarium.EAquarium.controller;
 
 
 import com.uge.devops.aquarium.EAquarium.models.Activite;
+import com.uge.devops.aquarium.EAquarium.models.Animal;
 import com.uge.devops.aquarium.EAquarium.models.Employe;
 import com.uge.devops.aquarium.EAquarium.service.ActiviteService;
+import com.uge.devops.aquarium.EAquarium.service.EmployeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.PostConstruct;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @RestController
@@ -16,6 +20,17 @@ public class ActiviteController {
     @Autowired
     ActiviteService ActiviteService;
 
+    @Autowired
+    EmployeService EmployeService;
+
+    @PostConstruct
+    public void init(){
+        Activite a1 = new Activite(1,"Activite1","2020-02-24","14:00","18:00",true,1,1,new ArrayList<Employe>(Arrays.asList(EmployeService.getEmployeById(1))));
+        Activite a2 = new Activite(2,"Activite2","2020-02-25","14:00","18:00",true,1,1,new ArrayList<Employe>(Arrays.asList(EmployeService.getEmployeById(4))));
+        Activite a3 = new Activite(3,"Activite3","2020-02-26","14:00","18:00",true,1,1,new ArrayList<Employe>(Arrays.asList(EmployeService.getEmployeById(4))));
+        ActiviteService.addActivite(new ArrayList<Activite>(Arrays.asList(a1, a2,a3)));
+    }
+
     @GetMapping("/Activite")
     public Iterable<Activite> getActivites() {
         return ActiviteService.getActivites();
@@ -23,12 +38,7 @@ public class ActiviteController {
 
     @GetMapping("/Activite/{id}")
     public Activite getActivite(@PathVariable Integer id) {
-        Employe e = new Employe(1, "Bahhou", "Mohsine", "mohsine", "123", "Paris", "0456789456" ,"14/11/1993", "7 18 61 00 112 338 23", "Responsable");
-        List<Employe> list = new ArrayList<>();
-        list.add(e);
-        Activite a = new Activite(1,"Activite1","7/02/2020","14:00","18:00",true,1,1,list);
-        //return ActiviteService.getActiviteById(id);
-        return a;
+        return ActiviteService.getActiviteById(id);
     }
 
 

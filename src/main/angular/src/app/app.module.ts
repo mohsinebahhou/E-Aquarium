@@ -47,20 +47,32 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+
+import { Routes, RouterModule } from '@angular/router';
+import { FlexLayoutModule } from "@angular/flex-layout";
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { FormAddAnimalComponent } from './animal/form-add-animal/form-add-animal.component';
-import { FormAddBassinComponent } from './bassin/form-add-bassin/form-add-bassin.component';
 import { FormAddEspeceComponent } from './espece/form-add-espece/form-add-espece.component';
+import { FormAddActiviteComponent } from './activite/form-add-activite/form-add-activite.component';
+import { HomeEmployeComponent } from './employe/home-employe/home-employe.component';
+import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { EmploiDuTempsComponent } from './employe/emploi-du-temps/emploi-du-temps.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    PageNotFoundComponent,
+    FormAddEspeceComponent,
     FormAddAnimalComponent,
-    FormAddBassinComponent,
-    FormAddEspeceComponent
+    FormAddActiviteComponent,
+    HomeEmployeComponent,
+    EmploiDuTempsComponent
   ],
   imports: [
     BrowserModule,
@@ -111,7 +123,20 @@ import { FormAddEspeceComponent } from './espece/form-add-espece/form-add-espece
     PortalModule,
     ScrollingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+
+
+    NgbModule,
+/*
+    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: true } 
+    ),
+
+    */
+    FlexLayoutModule,
+    NgxMaterialTimepickerModule,
+    CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory })
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -5,12 +5,14 @@ import com.uge.devops.aquarium.EAquarium.models.Bassin;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.PostConstruct;
 import java.util.List;
 
 @Service
 public class BassinService {
     @Autowired
     private BassinRepository Bassins;
+
 
     public Iterable<Bassin> getBassins() {
         return Bassins.findAll();

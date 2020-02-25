@@ -2,7 +2,6 @@ import { Injectable, NgModule } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { HttpClientModule,HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { error } from 'util';
 import { Bassin } from '../interfaces/bassin';
 
 
@@ -20,12 +19,6 @@ const httpOptions = {
   providedIn: 'root'
 })
 
-
-@NgModule({
-  imports: [
-      HttpClientModule
-  ]
-})
 
 export class BassinServiceService {
 
