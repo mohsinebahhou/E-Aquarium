@@ -1,43 +1,60 @@
 import { Component, OnInit } from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
+import { AnimalService } from 'src/app/services/animal.service';
+import { Animal } from 'src/app/interfaces/animal';
 
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
-}
 
-const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-  {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C'},
-  {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
-  {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
-  {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
-  {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
-];
+
+const  ELEMENT_DATA: Animal[] = [];
+
 @Component({
   selector: 'app-show-animals',
   templateUrl: './show-animals.component.html',
   styleUrls: ['./show-animals.component.css']
 })
 export class ShowAnimalsComponent implements OnInit {
+   listAnimal : Array<Animal>
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(private serviceAnimals : AnimalService) { 
+    this.serviceAnimals.getAll().subscribe(
+      data => this.listAnimal = data,
+      error => console.log(error)) 
+      this.dataSource = new MatTableDataSource(ELEMENT_DATA);
   }
 
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = new MatTableDataSource(ELEMENT_DATA);
+  ngOnInit(): void {
+    this.serviceAnimals.getAll().subscribe(
+      data => this.listAnimal = data,
+      error => console.log(error)) 
+      this.dataSource = new MatTableDataSource(ELEMENT_DATA);
+  }
+
+
+
+
+
+
+  displayedColumns: string[] = ['nom', 'sex', 'signeDistinctif', 'dateArrivee', 'dateDepart'];
+  dataSource :any
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
+    //this.dataSource.filter = filterValue.trim().toLowerCase();
+    console.log("Key" + filterValue)
+    let animals : Array<Animal>
+    this.listAnimal.forEach(a => {
+      if(a.nom==filterValue ||a.sex==filterValue  || a.signeDistinctif==filterValue || a.dateArrivee==filterValue || a.dateDepart==filterValue){
+        animals.push(a)
+      }
+    });
+    this.listAnimal=animals
+  }
+
+
+  show(){
+    this.listAnimal.forEach(a => {
+      console.log("animal " + a);
+    });
   }
 
 }

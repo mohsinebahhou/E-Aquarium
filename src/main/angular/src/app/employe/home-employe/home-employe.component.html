@@ -11,8 +11,29 @@
         <a mat-list-item routerLink="/EmploiDuTemps" routerLinkActive="active">Emploi du temps</a>
         <a mat-list-item routerLink="/AfficherTousLesAnimaux" routerLinkActive="active">Afficher Tous Les Animaux</a>
         <a mat-list-item routerLink="/AfficherTousLesEspeces" routerLinkActive="active">Afficher Tous Les especes</a>
+        <a mat-list-item  *ngIf="Signin" (click)="seDeconnecter()">Se déconnecter</a>
         
       </mat-nav-list>
+
+    <div *ngIf="employe.statut=='visiteur'">
+    <form [formGroup]="employeForm" (ngSubmit)="onFormSubmit()">
+      <mat-form-field appearance="fill">
+        <mat-label>Login</mat-label>
+        <input matInput  formControlName="login" required>
+      </mat-form-field>
+      <br>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Password</mat-label>
+        <input matInput  formControlName="password"   type="password" required>
+      </mat-form-field>
+      <br>
+    <div>   
+        <button mat-raised-button>Login</button>
+      </div>
+
+     </form>
+    </div>
     </mat-sidenav>
     <mat-sidenav-content>
       <mat-toolbar color="primary">
@@ -31,12 +52,16 @@
   
   
   
-      <router-outlet></router-outlet>
+      <router-outlet (loginEvent)="employe = $event"></router-outlet>
   
       <br>
       <br>
       <br>
-
+////S/S/dS/dSQ/d/SQD/qS/dQS/d/qsD/QS/dQS/dQSD/QsD/QS/dSQ:dQQS/DSQ/Side
+<br>
+{{ employe.login }}   {{ employe.password }}  {{ employe.dateNaissance }}  {{ employe.statut }}
+<br>
+////S/S/dS/dSQ/d/SQD/qS/dQS/d/qsD/QS/dQS/dQSD/QsD/QS/dSQ:dQQS/DSQ/Side
       <br>
       <br>
       <br>

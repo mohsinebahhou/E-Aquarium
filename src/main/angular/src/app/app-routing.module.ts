@@ -7,6 +7,7 @@ import { FormAddActiviteComponent } from './activite/form-add-activite/form-add-
 import { EmploiDuTempsComponent } from './employe/emploi-du-temps/emploi-du-temps.component';
 import { ShowAnimalsComponent } from './animal/show-animals/show-animals.component';
 import { ShowAllEspeceComponent } from './espece/show-all-espece/show-all-espece.component';
+import { LoginComponent } from './employe/login/login.component';
 
 
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'EmploiDuTemps',        component: EmploiDuTempsComponent },
   { path: 'AfficherTousLesAnimaux',        component: ShowAnimalsComponent },
   { path: 'AfficherTousLesEspeces',        component: ShowAllEspeceComponent },
+  { path: 'Login',        component: LoginComponent },
   { path: '',   redirectTo: '/AddAnimal', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent}
 ];

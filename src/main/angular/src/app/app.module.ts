@@ -65,6 +65,9 @@ import { FormAddEmployeComponent } from './employe/form-add-employe/form-add-emp
 import { ShowAnimalsComponent } from './animal/show-animals/show-animals.component';
 import { PointsImporterComponent } from './points-importer/points-importer.component';
 import { ShowAllEspeceComponent } from './espece/show-all-espece/show-all-espece.component';
+import { LoginComponent } from './employe/login/login.component';
+import { LoginDialogComponent } from './employe/login-dialog/login-dialog.component';
+
 
 
 
@@ -80,7 +83,9 @@ import { ShowAllEspeceComponent } from './espece/show-all-espece/show-all-espece
     FormAddEmployeComponent,
     ShowAnimalsComponent,
     PointsImporterComponent,
-    ShowAllEspeceComponent
+    ShowAllEspeceComponent,
+    LoginComponent,
+    LoginDialogComponent,
   ],
   imports: [
     BrowserModule,

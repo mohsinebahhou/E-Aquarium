@@ -24,7 +24,7 @@ export class EmployeService {
 
   constructor(private http: HttpClient) { }
 
-  sabeEmploye(bassin: any)  {
+  saveEmploye(bassin: any)  {
     console.log(bassin);
     this.http.post("/Employe",bassin,httpOptions).subscribe(res => {     
       console.log(bassin);
@@ -42,5 +42,15 @@ export class EmployeService {
 
  getAll(): Observable<any> {
   return this.http.get("/Employe")
+}
+
+
+getMOHSINE(): Observable<any> {
+  return this.http.get("/Employe/9")
+}
+
+
+login(login : any , pwd : any): Observable<any> {
+  return this.http.get("/Login/" +login +"/"+pwd)
 }
 }

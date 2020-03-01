@@ -1,0 +1,64 @@
+<div class="pannel">
+
+
+    <h2>Authentification</h2>
+
+    <form [formGroup]="employeForm" (ngSubmit)="onFormSubmit()">
+ 
+
+      <mat-form-field appearance="fill">
+        <mat-label>Login</mat-label>
+        <input matInput  formControlName="login" required>
+      </mat-form-field>
+      <br>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Password</mat-label>
+        <input matInput  formControlName="password"   type="password" required>
+      </mat-form-field>
+      <br>
+
+
+
+
+
+    <div>   
+        <button mat-raised-button>Login</button>
+      </div>
+
+</form>
+</div>
+---------sefezfesfds---
+
+
+{{mohsine}}
+  {{ mohsine.login }}   {{ mohsine.password }}  {{ mohsine.dateNaissance }}  {{ mohsine.telephone }}
+
+<br>
+<br>
+
+
+________éééééééééééééééééé
+
+{{ employe }}
+  {{ employe.login }}   {{ employe.password }}  {{ employe.dateNaissance }}  {{ employe.telephone }}
+
+--
+
+
+<ul>
+    <li *ngFor="let item of list">
+      {{ item.id }} :  {{ item.login }}   {{ item.password }}
+    </li>
+  </ul>
+
+  ----------
+next
+
+  <ul>
+    <li *ngFor="let item of listeee">
+      {{ item.id }} : {{ item.login }}   {{ item.password }}
+    </li>
+  </ul>
+
+  ----------

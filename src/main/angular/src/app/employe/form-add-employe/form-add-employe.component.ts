@@ -32,7 +32,7 @@ export class FormAddEmployeComponent implements OnInit {
 
 
   onFormSubmit() {
-    this.serviceEmploye.sabeEmploye(this.employeForm.value);
+    this.serviceEmploye.saveEmploye(this.employeForm.value);
   }
 
 

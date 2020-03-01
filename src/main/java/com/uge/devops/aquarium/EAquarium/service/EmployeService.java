@@ -27,4 +27,13 @@ public class EmployeService {
     public void addEmploye (List<Employe> list){ this.Employes.saveAll(list);}
 
     public void deleteEmploye(int id) { this.Employes.deleteById(id);}
+
+
+    public Employe Authentification(String login,String password){
+        Iterable<Employe> list = getEmployes();
+        for (Employe employe: list) {
+            if(employe.getLogin().equals(login) && employe.getPassword().equals(password)) return employe;
+        }
+        return null;
+    }
 }
