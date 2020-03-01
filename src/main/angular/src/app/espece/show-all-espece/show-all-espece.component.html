@@ -1,0 +1,29 @@
+<mat-accordion>
+    <mat-expansion-panel *ngFor="let e of listShowEspece"  >
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+            {{ e.espece.nom }}
+        </mat-panel-title>
+        <mat-panel-description>
+          {{ e.nbrPensionnaires }} : Pensionnaires
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <div><span style="font-size: medium;">Esperance de vie : </span><span> {{ e.espece.esperanceVie }}</span></div>
+      <div><span style="font-size: medium;">Regime alimentaire : </span><span> {{ e.espece.regimeAlimentaire }}</span></div>
+      <div><span style="font-size: medium;">Niveau de menace : </span><span> {{ e.espece.niveauMenace }}</span></div>
+      <div><span style="font-size: medium;">Animaux : </span></div>
+      <ul>
+        <li *ngFor="let a of e.listAnimals ">
+            Animal  :  {{ a.nom }}   |   Sexe :  {{ a.sex }}  |   Signe distinctif : {{ a.signeDistinctif }}  |   Bassin : {{ a.idBassin }}
+        </li>
+    </ul>
+    </mat-expansion-panel>
+
+
+
+  </mat-accordion>
+
+
+
+  

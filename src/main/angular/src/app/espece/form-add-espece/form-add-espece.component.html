@@ -1,1 +1,46 @@
-<p>form-add-espece works!</p>
+<div class="pannel">
+
+    <h2>Ajouter une nouvelle espece</h2>
+
+    <form [formGroup]="especeForm" (ngSubmit)="onFormSubmit()">
+    <mat-form-field appearance="fill">
+      <mat-label>Nom</mat-label>
+      <input matInput  formControlName="nom">
+    </mat-form-field>
+    <br>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Esperance de vie
+        </mat-label>
+        <input matInput type="number"  name="esperanceVie" formControlName="esperanceVie">
+    </mat-form-field>
+    <br>
+
+
+    <mat-form-field appearance="fill">
+        <mat-label>Regime alimentaire
+        </mat-label>
+        <input matInput  name="regimeAlimentaire" formControlName="regimeAlimentaire">
+    </mat-form-field>
+    <br>
+
+
+
+    <mat-form-field appearance="fill">
+        <mat-label>Niveau de menace
+        </mat-label>
+        <input matInput type="number"  min="0"  max="10"  name="niveauMenace" formControlName="niveauMenace">
+
+    </mat-form-field>
+    <br>
+    
+  
+
+    
+    <div>   
+        <button mat-raised-button>Ajouter</button>
+      </div>
+
+</form>
+</div>
+

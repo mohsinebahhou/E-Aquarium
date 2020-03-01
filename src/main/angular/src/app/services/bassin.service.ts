@@ -3,11 +3,10 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { HttpClientModule,HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Bassin } from '../interfaces/bassin';
-import { Espece } from '../interfaces/espece';
 
 
-export interface EspeceResponse {
-	results?: Espece[]; 
+export interface BassinResponse {
+	results?: Bassin[]; 
 }
 
 const httpOptions = {
@@ -21,21 +20,18 @@ const httpOptions = {
 })
 
 
-export class EspeceServiceService {
-
+export class BassinService {
   constructor(private http: HttpClient) { }
 
-  saveEspece(espece: any)  {
-    console.log(espece);
-    this.http.post("/Espece",espece,httpOptions).subscribe(res => {     
-      console.log(espece);
+  saveBassin(bassin: any)  {
+    console.log(bassin);
+    this.http.post("/Bassin",bassin,httpOptions).subscribe(res => {     
+      console.log(bassin);
     },
     (err: HttpErrorResponse) => {
-          if (err.error instanceof Error) {
-            //A client-side or network error occurred.				 
+          if (err.error instanceof Error) {			 
             console.log('An error occurred:', err.error.message);
-          } else {
-            //Backend returns unsuccessful response codes such as 404, 500 etc.				 
+          } else {			 
             console.log('Backend returned status code: ', err.status);
             console.log('Response body:', err.error);
           }
@@ -44,6 +40,6 @@ export class EspeceServiceService {
  }
 
  getAll(): Observable<any> {
-  return this.http.get("/Espece")
+  return this.http.get("/Bassin")
 }
 }

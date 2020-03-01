@@ -1,4 +1,8 @@
-<div>
+<div class="pannel">
+
+
+    <h2>Ajouter une activite</h2>
+
     <form [formGroup]="activiteForm" (ngSubmit)="onFormSubmit()">
     <mat-form-field appearance="fill">
       <mat-label>Nom</mat-label>
@@ -6,7 +10,7 @@
     </mat-form-field>
     <br>
 
-    <mat-form-field appearance="fill" style="width: 204px;">
+    <mat-form-field appearance="fill" >
         <mat-label>Jour</mat-label>
         <input matInput [matDatepicker]="jour" name="jour" formControlName="jour" required>
         <mat-datepicker-toggle matSuffix [for]="jour"></mat-datepicker-toggle>

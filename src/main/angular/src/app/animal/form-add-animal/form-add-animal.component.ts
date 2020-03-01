@@ -26,45 +26,18 @@ export class FormAddAnimalComponent implements OnInit {
 
 
 
-    Show(){
-      console.log("@@@@@@@@@@@@@@@@@@@@@@@@@")
-      console.log("show"+this.listAnimal)
-      this.listAnimal.forEach(element => {
-        console.log(element)
-      });
-    } 
+
 
 
   
 
   ngOnInit() {
-/*
-    console.log("---------ngOnInit-------------")
-    this.serviceAnimal.getAll().subscribe(
-      data => this.listAnimal = data,
-      error => console.log("Erreur "+error)   
-      )
-    console.log("#############################################")
-    //console.log("ngOninit"+this.listAnimal)
-    this.Show();
-    console.log("---------ngOnInit-------------")
-*/
+
     
   }
 
   ngAfterViewInit(){
-    /*
-    console.log("---------ngAfterViewInit-------------")
-    this.serviceAnimal.getAll().subscribe(
-      data => this.listAnimal = data,
-      error => console.log("Erreur "+error)   
-      )
-    console.log("#############################################")
-    console.log("ngAfterViewInit"+this.listAnimal)
-    this.Show();
-    console.log("---------ngAfterViewInit-------------")
 
-    */
   }
 
   animalForm = this.formBuilder.group({

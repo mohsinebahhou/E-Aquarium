@@ -1,5 +1,10 @@
-<body ng-init="Show()">
-<div>
+<div class="pannel">
+
+
+    <h2>Ajouter un animal</h2>
+
+
+
     <form [formGroup]="animalForm" (ngSubmit)="onFormSubmit()">
     <mat-form-field appearance="fill">
       <mat-label>Nom</mat-label>
@@ -23,7 +28,7 @@
     </mat-form-field>
     <br>
 
-    <mat-form-field appearance="fill" style="width: 204px;">
+    <mat-form-field appearance="fill" >
         <mat-label>Date Arrivee</mat-label>
         <input matInput [matDatepicker]="dateArrivee" name="dateArrivee" formControlName="dateArrivee">
         <mat-datepicker-toggle matSuffix [for]="dateArrivee"></mat-datepicker-toggle>
@@ -31,7 +36,7 @@
     </mat-form-field>
     <br>
       
-    <mat-form-field appearance="fill" style="width: 204px;">
+    <mat-form-field appearance="fill" >
         <mat-label>Date Depart</mat-label>
         <input matInput [matDatepicker]="dateDepart" name="dateDepart" formControlName="dateDepart">
         <mat-datepicker-toggle matSuffix [for]="dateDepart"></mat-datepicker-toggle>
@@ -76,7 +81,4 @@
 </ul>
 
 
-<button (click)="Show()">sdcdsc</button>
 
-
-</body>

@@ -5,6 +5,8 @@ import { FormAddEspeceComponent } from './espece/form-add-espece/form-add-espece
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { FormAddActiviteComponent } from './activite/form-add-activite/form-add-activite.component';
 import { EmploiDuTempsComponent } from './employe/emploi-du-temps/emploi-du-temps.component';
+import { ShowAnimalsComponent } from './animal/show-animals/show-animals.component';
+import { ShowAllEspeceComponent } from './espece/show-all-espece/show-all-espece.component';
 
 
 const routes: Routes = [
@@ -12,6 +14,8 @@ const routes: Routes = [
   { path: 'AddEspece',        component: FormAddEspeceComponent },
   { path: 'AjouterActivite',        component: FormAddActiviteComponent },
   { path: 'EmploiDuTemps',        component: EmploiDuTempsComponent },
+  { path: 'AfficherTousLesAnimaux',        component: ShowAnimalsComponent },
+  { path: 'AfficherTousLesEspeces',        component: ShowAllEspeceComponent },
   { path: '',   redirectTo: '/AddAnimal', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent}
 ];

@@ -19,12 +19,12 @@ public class AnimalController {
 
     @PostConstruct
     public void init(){
-        Animal a1 = new Animal(1,"Poisson1","Male","p1","14/2/2020","22/2/2020",1,1);
-        Animal a2 = new Animal(2,"Poisson2","Male","p1","14/2/2020","22/2/2020",1,1);
-        Animal a3 = new Animal(3,"Poisson3","Male","p1","14/2/2020","22/2/2020",1,1);
-        Animal a4 = new Animal(4,"Poisson4","Male","p1","14/2/2020","22/2/2020",1,2);
-        Animal a5 = new Animal(5,"Poisson5","Male","p1","14/2/2020","22/2/2020",2,2);
-        Animal a6 = new Animal(6,"Poisson6","Male","p1","14/2/2020","22/2/2020",2,2);
+        Animal a1 = new Animal(1,"Poisson1","Male","p1","14/2/2020","22/2/2020",13,7);
+        Animal a2 = new Animal(2,"Poisson2","Male","p1","14/2/2020","22/2/2020",13,7);
+        Animal a3 = new Animal(3,"Poisson3","Male","p1","14/2/2020","22/2/2020",13,7);
+        Animal a4 = new Animal(4,"Poisson4","Male","p1","14/2/2020","22/2/2020",14,8);
+        Animal a5 = new Animal(5,"Poisson5","Male","p1","14/2/2020","22/2/2020",14,8);
+        Animal a6 = new Animal(6,"Poisson6","Male","p1","14/2/2020","22/2/2020",14,8);
         animalService.addAnimal(new ArrayList<Animal>(Arrays.asList(a1, a2, a3,a4,a5,a6)));
     }
 

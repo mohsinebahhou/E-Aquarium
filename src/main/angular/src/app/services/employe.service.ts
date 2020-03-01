@@ -2,11 +2,11 @@ import { Injectable, NgModule } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { HttpClientModule,HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Bassin } from '../interfaces/bassin';
+import { Employe } from '../interfaces/employe';
 
 
-export interface BassinResponse {
-	results?: Bassin[]; 
+export interface EmployeResponse {
+	results?: Employe[]; 
 }
 
 const httpOptions = {
@@ -20,21 +20,19 @@ const httpOptions = {
 })
 
 
-export class BassinServiceService {
+export class EmployeService {
 
   constructor(private http: HttpClient) { }
 
-  saveBassin(bassin: any)  {
+  sabeEmploye(bassin: any)  {
     console.log(bassin);
-    this.http.post("/Bassin",bassin,httpOptions).subscribe(res => {     
+    this.http.post("/Employe",bassin,httpOptions).subscribe(res => {     
       console.log(bassin);
     },
     (err: HttpErrorResponse) => {
-          if (err.error instanceof Error) {
-            //A client-side or network error occurred.				 
+          if (err.error instanceof Error) {			 
             console.log('An error occurred:', err.error.message);
-          } else {
-            //Backend returns unsuccessful response codes such as 404, 500 etc.				 
+          } else {			 
             console.log('Backend returned status code: ', err.status);
             console.log('Response body:', err.error);
           }
@@ -43,6 +41,6 @@ export class BassinServiceService {
  }
 
  getAll(): Observable<any> {
-  return this.http.get("/Bassin")
+  return this.http.get("/Employe")
 }
 }

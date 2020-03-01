@@ -1,8 +1,10 @@
 package com.uge.devops.aquarium.EAquarium.controller;
 
 
+import com.uge.devops.aquarium.EAquarium.models.Animal;
 import com.uge.devops.aquarium.EAquarium.models.Bassin;
 import com.uge.devops.aquarium.EAquarium.models.Espece;
+import com.uge.devops.aquarium.EAquarium.models.EspeceDetails;
 import com.uge.devops.aquarium.EAquarium.service.EspeceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -55,4 +57,23 @@ public class EspeceController {
     public void deleteEspece(@PathVariable int id) {
         EspeceService.deleteEspece(id);
     }
+
+    @GetMapping("/Pensionnaires")
+    public Iterable<EspeceDetails> getPensionnairesByEspece() {
+        return EspeceService.PensionnairesByEspeces();
+    }
+
+
+    /*
+    @GetMapping("/nbrPensionnaires/{id}")
+    public int  getnbrPensionnairesByEspece(@PathVariable Integer id) {
+        System.out.println("nbrPensionnaires : " + id);
+        System.out.println("Id : " + id);
+        int n = EspeceService.nbrPensionnairesByEspece(id);
+        System.out.println("INNNNNNNNNNNNNNNNNNNNN : " + n);
+        return n;
+        //return EspeceService.getEspeces();
+    }
+
+     */
 }

@@ -61,6 +61,10 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { EmploiDuTempsComponent } from './employe/emploi-du-temps/emploi-du-temps.component';
+import { FormAddEmployeComponent } from './employe/form-add-employe/form-add-employe.component';
+import { ShowAnimalsComponent } from './animal/show-animals/show-animals.component';
+import { PointsImporterComponent } from './points-importer/points-importer.component';
+import { ShowAllEspeceComponent } from './espece/show-all-espece/show-all-espece.component';
 
 
 
@@ -72,7 +76,11 @@ import { EmploiDuTempsComponent } from './employe/emploi-du-temps/emploi-du-temp
     FormAddAnimalComponent,
     FormAddActiviteComponent,
     HomeEmployeComponent,
-    EmploiDuTempsComponent
+    EmploiDuTempsComponent,
+    FormAddEmployeComponent,
+    ShowAnimalsComponent,
+    PointsImporterComponent,
+    ShowAllEspeceComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,78 @@
+<div class="pannel">
+
+
+    <h2>Ajouter un employe</h2>
+
+    <form [formGroup]="employeForm" (ngSubmit)="onFormSubmit()">
+    <mat-form-field appearance="fill">
+      <mat-label>Nom</mat-label>
+      <input matInput  formControlName="nom" required>
+    </mat-form-field>
+    <br>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Prenom</mat-label>
+        <input matInput  formControlName="prenom" required>
+      </mat-form-field>
+      <br>
+
+
+      <mat-form-field appearance="fill">
+        <mat-label>Login</mat-label>
+        <input matInput  formControlName="login" required>
+      </mat-form-field>
+      <br>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Password</mat-label>
+        <input matInput  formControlName="password" required>
+      </mat-form-field>
+      <br>
+
+
+      <mat-form-field appearance="fill">
+        <mat-label>Adresse</mat-label>
+        <input matInput  formControlName="adresse" required>
+      </mat-form-field>
+      <br>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Telephone</mat-label>
+        <span matPrefix>+33 &nbsp;</span>
+        <input matInput  formControlName="telephone" required>
+      </mat-form-field>
+      <br>
+
+
+      <mat-form-field appearance="fill" >
+        <mat-label>Date de naissance</mat-label>
+        <input matInput [matDatepicker]="dateNaissance" name="dateNaissance" formControlName="dateNaissance">
+        <mat-datepicker-toggle matSuffix [for]="dateNaissance"></mat-datepicker-toggle>
+        <mat-datepicker #dateNaissance></mat-datepicker>
+    </mat-form-field>
+    <br>
+
+
+    <mat-form-field appearance="fill">
+        <mat-label>Numero securite social</mat-label>
+        <input matInput  formControlName="numSecuriteSocial" required>
+      </mat-form-field>
+      <br>
+
+    <mat-form-field appearance="fill" >
+        <mat-label>Statut</mat-label>
+        <mat-select name="statut" formControlName="statut" required>
+          <mat-option value="employe">Employe</mat-option>
+          <mat-option value="responsable">Responsable</mat-option>
+        </mat-select>
+      </mat-form-field>
+    <br>
+
+    <div>   
+        <button mat-raised-button>Ajouter</button>
+      </div>
+
+</form>
+</div>
+
+

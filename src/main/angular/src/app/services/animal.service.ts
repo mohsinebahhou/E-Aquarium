@@ -29,11 +29,9 @@ export class AnimalService {
       console.log(animal);
     },
     (err: HttpErrorResponse) => {
-          if (err.error instanceof Error) {
-            //A client-side or network error occurred.				 
+          if (err.error instanceof Error) {				 
             console.log('An error occurred:', err.error.message);
-          } else {
-            //Backend returns unsuccessful response codes such as 404, 500 etc.				 
+          } else {			 
             console.log('Backend returned status code: ', err.status);
             console.log('Response body:', err.error);
           }
