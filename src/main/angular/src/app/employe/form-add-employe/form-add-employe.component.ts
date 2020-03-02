@@ -1,6 +1,7 @@
-import { Component, OnInit, NgZone } from '@angular/core';
+import { Component, OnInit, NgZone, Input } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { EmployeService } from 'src/app/services/employe.service';
+import { Employe } from 'src/app/interfaces/employe';
 
 @Component({
   selector: 'app-form-add-employe',
@@ -8,10 +9,15 @@ import { EmployeService } from 'src/app/services/employe.service';
   styleUrls: ['./form-add-employe.component.css']
 })
 export class FormAddEmployeComponent implements OnInit {
-
+   employe : any = {"id":-1,"nom":"","login":"","password":"","prenom":"","statut":"visiteur","dateNaissance":"","adresse":"","numSecuriteSocial":"","telephone":""}
+   pseudo : string
   constructor(private ngZone: NgZone,
     private formBuilder: FormBuilder,
-    private serviceEmploye : EmployeService) { }
+    private serviceEmploye : EmployeService) { 
+      this.employe=this.serviceEmploye.employe
+      this.pseudo=this.serviceEmploye.pseudo
+    }
+
 
   ngOnInit(): void {
   }
@@ -29,6 +35,13 @@ export class FormAddEmployeComponent implements OnInit {
     statut: ''
   });
 
+  connecter(){
+    console.log("Test connceter")
+    this.employe=this.serviceEmploye.employe
+    console.log("Test connceter " + this.employe)
+    this.pseudo=this.serviceEmploye.pseudo
+  }
+
 
 
   onFormSubmit() {
@@ -36,6 +49,5 @@ export class FormAddEmployeComponent implements OnInit {
   }
 
 
-  
 
 }

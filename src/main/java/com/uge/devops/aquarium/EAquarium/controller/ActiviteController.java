@@ -10,8 +10,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.PostConstruct;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -61,4 +63,12 @@ public class ActiviteController {
     public void deleteActivite(@PathVariable int id) {
         ActiviteService.deleteActivite(id);
     }
+
+    @GetMapping("/SearchActivite/{jour}/{heure}")
+    public Iterable<Activite> rechercherActivite(@PathVariable String jour,@PathVariable String heure) {
+
+        return ActiviteService.RechercherActivite(jour,heure);
+    }
+
+
 }

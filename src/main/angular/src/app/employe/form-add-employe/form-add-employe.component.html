@@ -1,7 +1,10 @@
 <div class="pannel">
 
-
+  {{ employe.login }}   {{ employe.password }}  {{ employe.dateNaissance }}  {{ employe.statut }}
     <h2>Ajouter un employe</h2>
+{{pseudo}}
+dddds
+<button (click)="connecter()"></button>
 
     <form [formGroup]="employeForm" (ngSubmit)="onFormSubmit()">
     <mat-form-field appearance="fill">

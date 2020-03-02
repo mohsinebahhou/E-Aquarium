@@ -22,6 +22,10 @@ const httpOptions = {
 
 export class EmployeService {
 
+  employe : any = {"id":-1,"nom":"","login":"","password":"","prenom":"","statut":"visiteur","dateNaissance":"","adresse":"","numSecuriteSocial":"","telephone":""}
+
+
+  pseudo : string="none"
   constructor(private http: HttpClient) { }
 
   saveEmploye(bassin: any)  {
@@ -52,5 +56,17 @@ getMOHSINE(): Observable<any> {
 
 login(login : any , pwd : any): Observable<any> {
   return this.http.get("/Login/" +login +"/"+pwd)
+}
+
+
+onConnect(e : any){
+  console.log("callOncect : " + e)
+  this.employe=e
+  this.pseudo="onnnnn"
+}
+
+onDisconnected(){
+  this.employe== {"id":-1,"nom":"","login":"","password":"","prenom":"","statut":"visiteur","dateNaissance":"","adresse":"","numSecuriteSocial":"","telephone":""}
+  this.pseudo="none"
 }
 }

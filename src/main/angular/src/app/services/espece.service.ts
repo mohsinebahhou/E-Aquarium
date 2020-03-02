@@ -32,7 +32,7 @@ const httpOptions = {
 
 export class EspeceService {
 
-
+  
 
 
   constructor(private http: HttpClient) { }
@@ -61,6 +61,9 @@ export class EspeceService {
 getPensionnairesByEspece() : Observable<any>{
   return this.http.get("/Pensionnaires");
 }
+
+
+
 
 
 

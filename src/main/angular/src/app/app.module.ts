@@ -66,7 +66,7 @@ import { ShowAnimalsComponent } from './animal/show-animals/show-animals.compone
 import { PointsImporterComponent } from './points-importer/points-importer.component';
 import { ShowAllEspeceComponent } from './espece/show-all-espece/show-all-espece.component';
 import { LoginComponent } from './employe/login/login.component';
-import { LoginDialogComponent } from './employe/login-dialog/login-dialog.component';
+import { RechercherActiviteComponent } from './activite/rechercher-activite/rechercher-activite.component';
 
 
 
@@ -85,7 +85,7 @@ import { LoginDialogComponent } from './employe/login-dialog/login-dialog.compon
     PointsImporterComponent,
     ShowAllEspeceComponent,
     LoginComponent,
-    LoginDialogComponent,
+    RechercherActiviteComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, NgZone } from '@angular/core';
+import { Component, OnInit, Input, NgZone, Output, EventEmitter } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
@@ -22,7 +22,9 @@ export class HomeEmployeComponent {
 
 
   Signin : boolean =false
-  @Input() employe : Employe = {"id":-1,"nom":"","login":"","password":"","prenom":"","statut":"visiteur","dateNaissance":"","adresse":"","numSecuriteSocial":"","telephone":""}
+  employe : Employe = {"id":-1,"nom":"","login":"","password":"","prenom":"","statut":"visiteur","dateNaissance":"","adresse":"","numSecuriteSocial":"","telephone":""}
+
+
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
@@ -32,7 +34,8 @@ export class HomeEmployeComponent {
 
   constructor(private breakpointObserver: BreakpointObserver,private ngZone: NgZone,
     private formBuilder: FormBuilder,
-    private serviceEmploye : EmployeService) {}
+    private serviceEmploye : EmployeService) {
+    }
 
 
 
@@ -51,13 +54,19 @@ export class HomeEmployeComponent {
       data => this.employe = data,
       error => console.log(error))   
     this.Signin=true 
+    this.serviceEmploye.onConnect(this.employe)
+
   }
 
 
   seDeconnecter(){
     this.Signin=false
+    this.serviceEmploye.onDisconnected()
     this.employe  = {"id":-1,"nom":"","login":"","password":"","prenom":"","statut":"visiteur","dateNaissance":"","adresse":"","numSecuriteSocial":"","telephone":""}
   }
+
+
+
 
 
 

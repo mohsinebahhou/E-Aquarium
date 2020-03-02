@@ -8,10 +8,14 @@
         <a mat-list-item routerLink="/AjouterActivite" routerLinkActive="active">Ajouter une activite</a>
         <a mat-list-item routerLink="/AddAnimal" routerLinkActive="active">add animal</a>
         <a mat-list-item routerLink="/AddEspece" routerLinkActive="active">add espece</a>
+        <a mat-list-item routerLink="/AjouterEmploye" routerLinkActive="active">add employe</a>
         <a mat-list-item routerLink="/EmploiDuTemps" routerLinkActive="active">Emploi du temps</a>
         <a mat-list-item routerLink="/AfficherTousLesAnimaux" routerLinkActive="active">Afficher Tous Les Animaux</a>
         <a mat-list-item routerLink="/AfficherTousLesEspeces" routerLinkActive="active">Afficher Tous Les especes</a>
+        <a mat-list-item routerLink="/RechercherActivite" routerLinkActive="active">Rechercher Activite</a>
         <a mat-list-item  *ngIf="Signin" (click)="seDeconnecter()">Se déconnecter</a>
+        
+
         
       </mat-nav-list>
 
@@ -48,20 +52,15 @@
         <span>E-Aquarium</span>
       </mat-toolbar>
     
-     
+
   
   
   
-      <router-outlet (loginEvent)="employe = $event"></router-outlet>
+      <router-outlet ></router-outlet>
   
       <br>
       <br>
       <br>
-////S/S/dS/dSQ/d/SQD/qS/dQS/d/qsD/QS/dQS/dQSD/QsD/QS/dSQ:dQQS/DSQ/Side
-<br>
-{{ employe.login }}   {{ employe.password }}  {{ employe.dateNaissance }}  {{ employe.statut }}
-<br>
-////S/S/dS/dSQ/d/SQD/qS/dQS/d/qsD/QS/dQS/dQSD/QsD/QS/dSQ:dQQS/DSQ/Side
       <br>
       <br>
       <br>

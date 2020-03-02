@@ -1,6 +1,7 @@
 import { Component, OnInit, NgZone } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { ActiviteService } from 'src/app/services/activite.service';
+import { AnimalService } from 'src/app/services/animal.service';
 
 @Component({
   selector: 'app-form-add-activite',
@@ -11,7 +12,10 @@ export class FormAddActiviteComponent implements OnInit {
 
   constructor(private ngZone: NgZone,
     private formBuilder: FormBuilder,
-    private serviceActivite : ActiviteService) {
+    private serviceActivite : ActiviteService,
+    private serviceSecteur : SecteurSer,
+    private sevice
+    ) {
      }
 
   ngOnInit(): void {

@@ -1,0 +1,80 @@
+<div>
+<span class="pannel">
+
+
+    <h2>Rechercher une activite</h2>
+
+    <form [formGroup]="activiteForm" (ngSubmit)="onFormSubmit()">
+
+
+    <mat-form-field appearance="fill" >
+        <mat-label>Jour</mat-label>
+        <input matInput [matDatepicker]="jour" name="jour" formControlName="jour" required>
+        <mat-datepicker-toggle matSuffix [for]="jour"></mat-datepicker-toggle>
+        <mat-datepicker #jour></mat-datepicker>
+    </mat-form-field>
+    <br>
+
+
+    <mat-form-field appearance="fill">
+        <mat-label>Heure debut</mat-label>
+        <input matInput [ngxTimepicker]="heureDebut" [format]="24"  formControlName="heureDebut" required />
+      </mat-form-field>
+      <ngx-material-timepicker #heureDebut></ngx-material-timepicker>
+      <br>
+
+    <div>   
+        <button mat-raised-button>Rechercher</button>
+      </div>
+
+</form>
+
+</span>
+
+<br>
+<br>
+<div *ngIf="unlockArray">
+    <table mat-table [dataSource]="listActivite" class="mat-elevation-z8">
+  
+        <!-- Position Column -->
+        <ng-container matColumnDef="nom">
+          <th mat-header-cell *matHeaderCellDef> nom </th>
+          <td mat-cell *matCellDef="let element"> {{element.nom}} </td>
+        </ng-container>
+      
+        <!-- Name Column -->
+        <ng-container matColumnDef="jour">
+          <th mat-header-cell *matHeaderCellDef> jour </th>
+          <td mat-cell *matCellDef="let element"> {{element.jour}} </td>
+        </ng-container>
+      
+        <!-- Weight Column -->
+        <ng-container matColumnDef="heureDebut">
+          <th mat-header-cell *matHeaderCellDef> heureDebut </th>
+          <td mat-cell *matCellDef="let element"> {{element.heureDebut}} </td>
+        </ng-container>
+      
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="heureFin">
+          <th mat-header-cell *matHeaderCellDef> heureFin </th>
+          <td mat-cell *matCellDef="let element"> {{element.heureFin}} </td>
+        </ng-container>
+    
+    
+        <ng-container matColumnDef="idBassin">
+          <th mat-header-cell *matHeaderCellDef> Bassin </th>
+          <td mat-cell *matCellDef="let element"> {{element.idBassin}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="idSecteur">
+            <th mat-header-cell *matHeaderCellDef> Secteur </th>
+            <td mat-cell *matCellDef="let element"> {{element.idSecteur}} </td>
+          </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+
+</div>
+
+</div>

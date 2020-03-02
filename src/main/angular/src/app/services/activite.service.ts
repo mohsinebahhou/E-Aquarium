@@ -43,4 +43,10 @@ export class ActiviteService {
  getAll(): Observable<any> {
   return this.http.get("/Activite")
 }
+
+
+getActiviteByJourAndHeur(jour : any , heure : any): Observable<any> {
+  return this.http.get("/SearchActivite/" + jour+"/"+heure)
+}
+
 }
