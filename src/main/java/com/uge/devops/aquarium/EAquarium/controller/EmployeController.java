@@ -61,9 +61,7 @@ public class EmployeController {
 
     @GetMapping("/Login/{login}/{password}")
     public Employe Authentification(@PathVariable String login,@PathVariable String password) {
-        System.out.println("Login : |"+ login + "| Password : |" + password+"|");
         Employe e = EmployeService.Authentification(login,password);
-        System.out.println("Emloye mohsine : "+ e);
         return e;
     }
 }

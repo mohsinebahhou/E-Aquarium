@@ -51,19 +51,18 @@
     <mat-form-field appearance="fill" >
         <mat-label>Secteur</mat-label>
         <mat-select name="idSecteur" formControlName="idSecteur" required>
-          <mat-option value="1">Secteur1</mat-option>
-          <mat-option value="2">Secteur2</mat-option>
-          <mat-option value="3">Secteur3</mat-option>
+          <mat-option *ngFor="let item of listSecteur" value="{{item.id}}">{{ item.nom }}</mat-option>
+
         </mat-select>
       </mat-form-field>
     <br>
 
+
+
     <mat-form-field appearance="fill" >
         <mat-label>Bassin</mat-label>
         <mat-select name="idBassin" formControlName="idBassin" required>
-          <mat-option value="1">Bassin1</mat-option>
-          <mat-option value="2">Bassin2</mat-option>
-          <mat-option value="3">Bassin3</mat-option>
+          <mat-option *ngFor="let item of listBassin" value="{{item.id}}">{{ item.nom }}</mat-option>
         </mat-select>
       </mat-form-field>
     <br>

@@ -3,6 +3,10 @@ import { FormBuilder } from '@angular/forms';
 import { AnimalService, AnimalResponse } from 'src/app/services/animal.service';
 import { Observable } from 'rxjs';
 import { Animal } from 'src/app/interfaces/animal';
+import { BassinService } from 'src/app/services/bassin.service';
+import { Bassin } from 'src/app/interfaces/bassin';
+import { EspeceService } from 'src/app/services/espece.service';
+import { Espece } from 'src/app/interfaces/espece';
 
 
 
@@ -14,14 +18,24 @@ import { Animal } from 'src/app/interfaces/animal';
 export class FormAddAnimalComponent implements OnInit {
 
   listAnimal : Observable<Animal>;
+  listBassin : Array<Bassin>
+  listEspece : Array<Espece>
 
   constructor(private ngZone: NgZone,
     private formBuilder: FormBuilder,
-    private serviceAnimal : AnimalService) {
+    private serviceAnimal : AnimalService,private seviceBassin : BassinService,private serviceEspece : EspeceService) {
       this.serviceAnimal.getAll().subscribe(
         data => this.listAnimal = data,
         error => console.log("Erreur "+error)   
         )
+
+        this.seviceBassin.getAll().subscribe(
+          data => this.listBassin = data,
+          error => console.log(error)) 
+
+          this.serviceEspece.getAll().subscribe(
+            data => this.listEspece = data,
+            error => console.log(error)) 
      }
 
 

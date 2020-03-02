@@ -1,7 +1,4 @@
-<mat-form-field>
-    <mat-label>Rechercher</mat-label>
-    <input matInput (keyup)="applyFilter($event)" placeholder="Entrez le nom, le sex, le signe distinctif, la date arrivé ou départ ">
-  </mat-form-field>
+
   
   <table mat-table [dataSource]="listAnimal" class="mat-elevation-z8">
   
@@ -38,13 +35,6 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
-  mmdsmmd
-  <ul>
-    <li *ngFor="let item of listAnimal">
-      {{ item.id }} :  {{ item.nom }}
-    </li>
-  </ul>
 
-  mdmdm
+ 
 
-  <button (click)="show()"></button>

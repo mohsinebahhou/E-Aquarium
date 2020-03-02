@@ -87,14 +87,14 @@ export class EmploiDuTempsComponent{
   events: CalendarEvent[] = [
 
     {
-      start: startOfDay(new Date("2020-02-23")),
-      title: 'Mohsine bahhou  23',
+      start: startOfDay(new Date("2020-03-03")),
+      title: '14:00 -> 16:00  : Activite 1',
       color: colors.yellow,
       actions: this.actions
     },
     {
-      start: startOfDay(new Date("2020-02-24")),
-      title: 'Mohsine bahhou  24',
+      start: startOfDay(new Date("2020-03-22")),
+      title: '08:00 -> 12:00  : Activite 4',
       color: colors.yellow,
       actions: this.actions
     }

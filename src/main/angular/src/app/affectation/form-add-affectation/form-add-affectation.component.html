@@ -1,1 +1,43 @@
-<p>form-add-affectation works!</p>
+<div class="pannel">
+
+
+    <h2>Nouvelle Affectation</h2>
+
+    <form [formGroup]="affectationForm" (ngSubmit)="onFormSubmit()">
+
+        <mat-form-field appearance="fill" >
+            <mat-label>Employe</mat-label>
+            <mat-select name="idSecteur" formControlName="idSecteur" required>
+              <mat-option *ngFor="let item of listEmploye" value="{{item.id}}">{{ item.nom }} {{ item.prenom }}</mat-option>
+    
+            </mat-select>
+          </mat-form-field>
+        <br>
+
+    <mat-form-field appearance="fill" >
+        <mat-label>Secteur</mat-label>
+        <mat-select name="idSecteur" formControlName="idSecteur" required>
+          <mat-option *ngFor="let item of listSecteur" value="{{item.id}}">{{ item.nom }}</mat-option>
+
+        </mat-select>
+      </mat-form-field>
+    <br>
+
+
+
+    <mat-form-field appearance="fill" >
+        <mat-label>Bassin</mat-label>
+        <mat-select name="idBassin" formControlName="idBassin" required>
+          <mat-option *ngFor="let item of listBassin" value="{{item.id}}">{{ item.nom }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    <br>
+
+    <div>   
+        <button mat-raised-button>Ajouter</button>
+      </div>
+
+</form>
+</div>
+
+

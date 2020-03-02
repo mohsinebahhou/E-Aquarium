@@ -65,8 +65,8 @@ import { FormAddEmployeComponent } from './employe/form-add-employe/form-add-emp
 import { ShowAnimalsComponent } from './animal/show-animals/show-animals.component';
 import { PointsImporterComponent } from './points-importer/points-importer.component';
 import { ShowAllEspeceComponent } from './espece/show-all-espece/show-all-espece.component';
-import { LoginComponent } from './employe/login/login.component';
 import { RechercherActiviteComponent } from './activite/rechercher-activite/rechercher-activite.component';
+import { FormAddAffectationComponent } from './affectation/form-add-affectation/form-add-affectation.component';
 
 
 
@@ -84,8 +84,8 @@ import { RechercherActiviteComponent } from './activite/rechercher-activite/rech
     ShowAnimalsComponent,
     PointsImporterComponent,
     ShowAllEspeceComponent,
-    LoginComponent,
-    RechercherActiviteComponent
+    RechercherActiviteComponent,
+    FormAddAffectationComponent
   ],
   imports: [
     BrowserModule,
@@ -140,13 +140,7 @@ import { RechercherActiviteComponent } from './activite/rechercher-activite/rech
 
 
     NgbModule,
-/*
-    RouterModule.forRoot(
-      appRoutes,
-      { enableTracing: true } 
-    ),
 
-    */
     FlexLayoutModule,
     NgxMaterialTimepickerModule,
     CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory })
